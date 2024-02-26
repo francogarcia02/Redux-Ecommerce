@@ -1,16 +1,43 @@
+import React, {useState} from 'react';
+import { BagFill, ArrowBarLeft, ArrowBarRight } from 'react-bootstrap-icons';
 import {Link} from 'react-router-dom';
-import {BagFill} from 'react-bootstrap-icons';
 
 const Navbar = () => {
-    return(
-        <div className="navbar justify-content-between bg-danger text-light p-2 ps-3 pe-3">
-            <h1 className="text-center">Redux-Ecommerce</h1>
-            <div className="d-flex">
-                    <Link className="text-decoration-none text-light bag-width pe-4" to="/cart"><BagFill/></Link>
-                    <Link className="text-decoration-none text-light pe-2" to="/products">Productos</Link>
-            </div>
-        </div>
-    )
-}
+    const [clicked ,setClicked] = useState(false)
+    const toggleClick = () =>{
+        setClicked(!clicked)
+    }
 
-export default Navbar
+    return (
+        <nav className="d-flex bg-danger justify-content-between p-2 align-items-center">
+            <Link to="/" className="text-light text-uppercase text-decoration-none">
+                <img src="assets/img/logos/logoipsum-329.svg" alt="logo"/>
+            </Link>
+            <div>
+                <ul id="navbar" className={clicked ? '#navbar active' : '#navbar'}>
+                    <li>
+                        <Link to="/cart" className="text-light p-2 text-uppercase text-decoration-none d-flex align-items-center" aria-current="page"><BagFill className="pe-1"/>Carrito</Link>
+                    </li>
+                    <li>
+                        <Link to="/products" className="text-light p-2 text-uppercase text-decoration-none">Productos</Link>
+                    </li>
+                </ul>
+            </div>
+            <div id="mobile">
+                <p id="bar" onClick={() => toggleClick()}>
+                    {clicked
+                    ?
+                    <ArrowBarRight className="text-light icon-width"/>
+                    :
+                    <ArrowBarLeft className="text-light icon-width"/>
+                    }
+                </p>
+
+
+            </div>
+        </nav>
+    );
+};
+
+export default Navbar;
+
