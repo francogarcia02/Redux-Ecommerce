@@ -89,3 +89,7 @@ li a{
       margin-bottom: 20px;
     }
 }
+
+#plus-minus_button{
+  cursor: pointer;
+}
