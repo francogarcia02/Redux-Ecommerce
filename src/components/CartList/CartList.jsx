@@ -20,8 +20,9 @@ const CartList = () => {
                       add={() => dispatch(add(prod.id))}
                      />
                 ))}
-                <div>
-                    <button onClick={()=>dispatch(clear())}>Borrar</button>
+                <div className="d-flex justify-content-end">
+                    <button className="btn btn-danger m-1" onClick={()=>dispatch(clear())}>Vaciar</button>
+                    <button className="btn btn-primary m-1" >Comprar</button>
                 </div>
                 </>
                 :
