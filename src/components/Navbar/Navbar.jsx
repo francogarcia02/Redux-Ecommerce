@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { BagFill, ArrowBarLeft, ArrowBarRight } from 'react-bootstrap-icons';
 import {Link} from 'react-router-dom';
+import {useState} from 'react';
+
 
 const Navbar = () => {
+
     const [clicked ,setClicked] = useState(false)
     const toggleClick = () =>{
         setClicked(!clicked)
@@ -16,10 +19,10 @@ const Navbar = () => {
             <div>
                 <ul id="navbar" className={clicked ? '#navbar active' : '#navbar'}>
                     <li>
-                        <Link to="/cart" className="text-light p-2 text-uppercase text-decoration-none d-flex align-items-center" aria-current="page"><BagFill className="pe-1"/>Carrito</Link>
+                        <Link to="/cart" className="navbar-item p-2 text-uppercase text-decoration-none d-flex align-items-center" aria-current="page"><BagFill className="pe-1"/>Carrito</Link>
                     </li>
                     <li>
-                        <Link to="/products" className="text-light p-2 text-uppercase text-decoration-none">Productos</Link>
+                        <Link to="/products" className="navbar-item  p-2 text-uppercase text-decoration-none">Productos</Link>
                     </li>
                 </ul>
             </div>
