@@ -96,16 +96,7 @@ li a{
   left: 10px;
 }
 
-.l-img{
-  width: 50rem;
-  height: 400px;
-}
-
 @media screen and (max-width: 769px){
-    l-img{
-      width: 250px;
-      height: 5px;
-    }
     #mobile{
         display: grid;
         align-items: center;
