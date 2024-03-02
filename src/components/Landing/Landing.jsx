@@ -31,9 +31,13 @@ const Landing = () =>{
         <div className="p-3 text-indigo-600 container">
             <h3 className="m-0 text-center">Nuestros productos principales</h3>
             {products && products[currentIndex] &&
-            <div className="max-w-[50rem] m-auto py-16 p-5 relative group">
-                <img src={products[currentIndex].img} className="shadow rounded-2xl w-full max-h-[400px] h-auto bg-center bg-cover duration-500" alt="img"/>
-                <Link to="/products" className="hidden group-hover:block btn btn-primary absolute top-[80%] right-[10%]">Ver mas</Link>
+            <div className="max-w-[50rem] w-full m-auto py-16 p-5 relative group">
+                <div
+                className='shadow w-full h-full rounded-2xl duration-500'
+                 >
+                 <img src={products[currentIndex].img} alt="img"/>
+                 </div>
+                <Link to="/products" className="hidden  group-hover:block btn btn-primary absolute top-[80%] right-[10%]">Ver mas</Link>
                 <div onClick={prevIndex} className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full bg-white/20 text-black cursor-pointer">
                     <BsChevronCompactLeft size={30}/>
                 </div>
